@@ -2,8 +2,8 @@
 
 /*
   23.01.2023
-  РўРµРјР° 2, Р—Р°РЅСЏС‚РёРµ 2
-  Р Р°Р±РѕС‚Р° 3, Р’С‹РІРѕРґ СЃС‚СЂСѓРєС‚СѓСЂС‹
+  Тема 2, Занятие 2
+  Работа 3, Вывод структуры
   CPP-07
   @j1n4ed
 */
@@ -13,47 +13,47 @@
 
 struct address
 {
-    std::string city;
-    std::string street;
+    std::wstring city;
+    std::wstring street;
     int buildingNum;
     int flatNum;
     int postIndex;
 };
 
 /*
-    Р¤СѓРЅРєС†РёСЏ РїРµС‡Р°С‚Рё СЌРєР·РµРјРїР»СЏСЂР° Р°РґСЂРµСЃР°
+    Функция печати экземпляра адреса
 */
-void printAddress(const address &);
+void print_address(const address &);
 
 int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    address adr1 = { "РњРѕСЃРєРІР°", "РЁРѕСЃСЃРµ Р­РЅС‚СѓР·РёР°СЃС‚РѕРІ", 220, 82, 150380 };    
-    address adr2 = { "РќРѕРІРѕСЃРёР±РёСЂСЃРє", "РџСЂРѕСЃРїРµРєС‚ Р›РµРЅРёРЅР°", 51, 23, 250580 };
-    address adr3 = { "РњСѓСЂРјР°РЅСЃРє", "СѓР». РљРѕРјРёРЅС‚РµСЂРЅР°", 18, 5, 850180 };
+    address adr1 = { L"Москва", L"Шоссе Энтузиастов", 220, 82, 150380};
+    address adr2 = { L"Новосибирск", L"Проспект Ленина", 51, 23, 250580 };
+    address adr3 = { L"Мурманск", L"ул. Коминтерна", 18, 5, 850180 };
 
-    printAddress(adr1);
-    printAddress(adr2);
-    printAddress(adr3);
+    print_address(adr1);
+    print_address(adr2);
+    print_address(adr3);
 
-    std::cout << std::endl;
+    std::wcout << std::endl;
 
     system("pause");
     return 0;
 }
 
 /*
-    Р¤СѓРЅРєС†РёСЏ РїРµС‡Р°С‚Рё СЌРєР·РµРјРїР»СЏСЂР° Р°РґСЂРµСЃР°
+    Функция печати экземпляра адреса
 */
-void printAddress(const address& adr)
+void print_address(const address& adr)
 {
-    std::cout << std::endl << "----------------------------------";
-    std::cout << "\nР“РѕСЂРѕРґ: " << adr.city
-        << "\nРЈР»РёС†Р°: " << adr.street
-        << "\nРќРѕРјРµСЂ РґРѕРјР°: " << adr.buildingNum
-        << "\nРќРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹: " << adr.flatNum
-        << "\nРџРѕС‡С‚РѕРІС‹Р№ РёРЅРґРµРєСЃ: " << adr.postIndex;
-    std::cout << "\n----------------------------------\n";        
+    std::wcout << std::endl << L"----------------------------------";
+    std::wcout << L"\nГород: " << adr.city
+        << L"\nУлица: " << adr.street
+        << L"\nНомер дома: " << adr.buildingNum
+        << L"\nНомер квартиры: " << adr.flatNum
+        << L"\nПочтовый индекс: " << adr.postIndex;
+    std::wcout << "\n----------------------------------\n";        
 }

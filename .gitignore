@@ -1,3 +1,5 @@
 /.vs
 /x64
-/x32
+/x86
+/Debug
+/common
